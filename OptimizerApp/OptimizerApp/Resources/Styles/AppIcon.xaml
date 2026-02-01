@@ -1,0 +1,24 @@
+<!-- Recurso XAML que simula un ícono usando Canvas -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Icon Canvas for AppIcon -->
+    <DataTemplate x:Key="AppIconTemplate">
+        <Canvas Width="256" Height="256" Background="#0D0D0D">
+            <!-- Border -->
+            <Rectangle Canvas.Left="8" Canvas.Top="8" Width="240" Height="240" 
+                      Stroke="#44D62C" StrokeThickness="3" Fill="Transparent"/>
+            
+            <!-- Main text "OP" -->
+            <TextBlock Canvas.Left="0" Canvas.Top="40" Width="256" Height="80"
+                      Text="OP" FontSize="96" FontWeight="Bold" Foreground="#44D62C"
+                      TextAlignment="Center" VerticalAlignment="Center"/>
+            
+            <!-- Subtitle "By KYZ" -->
+            <TextBlock Canvas.Left="0" Canvas.Top="150" Width="256" Height="40"
+                      Text="By KYZ" FontSize="18" Foreground="#E8E8E8"
+                      TextAlignment="Center" VerticalAlignment="Center" Opacity="0.9"/>
+        </Canvas>
+    </DataTemplate>
+    
+</ResourceDictionary>

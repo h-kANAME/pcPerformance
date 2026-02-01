@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OptimizerApp.Tests/OptimizerApp.Tests.csproj" />
+  <Project Path="OptimizerApp/OptimizerApp.csproj" />
+</Solution>

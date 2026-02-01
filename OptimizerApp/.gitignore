@@ -1,0 +1,36 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+*.csproj.user
+*.vcxproj.user
+*.sln.docstates
+
+# Rider/VS Code
+.idea/
+.vscode/
+
+# Packages
+packages/
+*.nupkg
+*.snupkg
+
+# Test results
+TestResults/
+
+# Logs
+*.log
+
+# SQLite / local db
+*.db
+*.db-shm
+*.db-wal
+
+# OS
+Thumbs.db
+Desktop.ini

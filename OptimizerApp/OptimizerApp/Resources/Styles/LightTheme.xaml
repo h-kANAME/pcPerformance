@@ -1,0 +1,331 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Windows 11 Light Theme Color Palette -->
+    <Color x:Key="RazerGreen">#0078D4</Color>
+    <Color x:Key="RazerGreenDark">#005A9E</Color>
+    <Color x:Key="RazerGreenGlow">#0078D4</Color>
+    <Color x:Key="RazerBlack">#F3F3F3</Color>
+    <Color x:Key="RazerDarkGray">#FFFFFF</Color>
+    <Color x:Key="RazerMediumGray">#E6E6E6</Color>
+    <Color x:Key="RazerLightGray">#CCCCCC</Color>
+    <Color x:Key="RazerTextPrimary">#202020</Color>
+    <Color x:Key="RazerTextSecondary">#707070</Color>
+    
+    <!-- Windows 11 Specific Colors -->
+    <Color x:Key="Win11Accent">#0078D4</Color>
+    <Color x:Key="Win11Background">#F3F3F3</Color>
+    <Color x:Key="Win11CardBackground">#FFFFFF</Color>
+    <Color x:Key="Win11Border">#D1D1D1</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="RazerGreenBrush" Color="{StaticResource RazerGreen}" />
+    <SolidColorBrush x:Key="RazerGreenDarkBrush" Color="{StaticResource RazerGreenDark}" />
+    <SolidColorBrush x:Key="RazerGreenGlowBrush" Color="{StaticResource RazerGreenGlow}" />
+    <SolidColorBrush x:Key="RazerBlackBrush" Color="{StaticResource RazerBlack}" />
+    <SolidColorBrush x:Key="RazerDarkGrayBrush" Color="{StaticResource RazerDarkGray}" />
+    <SolidColorBrush x:Key="RazerMediumGrayBrush" Color="{StaticResource RazerMediumGray}" />
+    <SolidColorBrush x:Key="RazerLightGrayBrush" Color="{StaticResource RazerLightGray}" />
+    <SolidColorBrush x:Key="RazerTextPrimaryBrush" Color="{StaticResource RazerTextPrimary}" />
+    <SolidColorBrush x:Key="RazerTextSecondaryBrush" Color="{StaticResource RazerTextSecondary}" />
+    
+    <!-- Accent Brush (para highlights y bordes de acento) -->
+    <SolidColorBrush x:Key="AccentBrush" Color="#0078D4" />
+    <SolidColorBrush x:Key="AccentHighlightBrush" Color="#0078D4" />
+
+    <!-- Window Style -->
+    <Style x:Key="RazerWindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="#F3F3F3" />
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontFamily" Value="Segoe UI Variable Display, Segoe UI, Arial" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+    <!-- Button Style (Normal) -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource RazerMediumGrayBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="18,10" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter x:Name="content" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#F6F6F6" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#C7C7C7" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#F0F0F0" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#ADADAD" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Primary Button Style (Windows 11 Accent - para botones de acción) -->
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="Background" Value="#0078D4" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="BorderBrush" Value="#0078D4" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="18,10" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter x:Name="content" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#005A9E" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#005A9E" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#004578" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#004578" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TextBlock Style -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontFamily" Value="Segoe UI Variable Display, Segoe UI, Arial" />
+    </Style>
+
+    <!-- TabControl Style -->
+    <Style TargetType="TabControl">
+        <Setter Property="Background" Value="#F3F3F3" />
+        <Setter Property="BorderBrush" Value="{StaticResource RazerMediumGrayBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="{StaticResource RazerTextSecondaryBrush}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="20,10" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="Border" 
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="0,0,0,2"
+                            Margin="0,0,4,0"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter x:Name="ContentSite"
+                                        ContentSource="Header"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#0078D4" />
+                            <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#E6E6E6" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Border Style (Windows 11 Cards) -->
+    <Style x:Key="RazerBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="BorderBrush" Value="#E0E0E0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#000000" BlurRadius="8" ShadowDepth="2" Opacity="0.05" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DataGrid Style -->
+    <Style TargetType="DataGrid">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource RazerMediumGrayBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="RowBackground" Value="#FFFFFF" />
+        <Setter Property="AlternatingRowBackground" Value="#F9F9F9" />
+        <Setter Property="GridLinesVisibility" Value="Horizontal" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#F0F0F0" />
+        <Setter Property="VerticalGridLinesBrush" Value="#F0F0F0" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="CanUserResizeRows" Value="False" />
+        <Setter Property="SelectionMode" Value="Single" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="#F9F9F9" />
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="BorderBrush" Value="#E6E6E6" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <Style TargetType="DataGridRow">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F6F6F6" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#E6F4EA" />
+                <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="DataGridCell">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="8,6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <Border Background="{TemplateBinding Background}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Separator Style -->
+    <Style TargetType="Separator">
+        <Setter Property="Background" Value="#E6E6E6" />
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Margin" Value="0,8" />
+    </Style>
+
+    <!-- TextBox Style -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource RazerMediumGrayBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="8,6" />
+        <Setter Property="CaretBrush" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="#0078D4" />
+                <Setter Property="BorderThickness" Value="2" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Title Text Style -->
+    <Style x:Key="RazerTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <!-- Subtitle Text Style -->
+    <Style x:Key="RazerSubtitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!-- Status Text Style -->
+    <Style x:Key="RazerStatusStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#0078D4" />
+        <Setter Property="FontFamily" Value="Consolas, Courier New" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- CheckBox Style -->
+    <Style TargetType="CheckBox">
+        <Setter Property="Foreground" Value="{StaticResource RazerTextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <StackPanel Orientation="Horizontal">
+                        <Border x:Name="border" 
+                                Width="20" Height="20" 
+                                BorderBrush="#8A8A8A" 
+                                BorderThickness="1" 
+                                CornerRadius="4"
+                                Background="#FFFFFF"
+                                Margin="0,0,8,0">
+                            <TextBlock x:Name="check" 
+                                     Text="✓" 
+                                     FontSize="14" 
+                                     FontWeight="Bold"
+                                     Foreground="#FFFFFF"
+                                     HorizontalAlignment="Center" 
+                                     VerticalAlignment="Center"
+                                     Visibility="Collapsed" />
+                        </Border>
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="check" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="border" Property="Background" Value="#0078D4" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#0078D4" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="#0078D4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
