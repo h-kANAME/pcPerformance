@@ -2,7 +2,7 @@
 ; Genera un instalador EXE auto-contenido con todo lo necesario
 
 #define MyAppName "PC Performance Optimizer"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "KYZ"
 #define MyAppExeName "OptimizerApp.exe"
 #define MyAppPublisherURL "https://example.com"
@@ -50,20 +50,20 @@ Source: "{#SourcePath}*.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourcePath}*.json"; DestDir: "{app}"; Flags: ignoreversion
 ; Assets
 Source: "..\OptimizerApp\Assets\*"; DestDir: "{app}\Assets"; Flags: ignoreversion recursesubdirs
-; Language packs
-Source: "{#SourcePath}cs\*"; DestDir: "{app}\cs"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}de\*"; DestDir: "{app}\de"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}es\*"; DestDir: "{app}\es"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}fr\*"; DestDir: "{app}\fr"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}it\*"; DestDir: "{app}\it"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}ja\*"; DestDir: "{app}\ja"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}ko\*"; DestDir: "{app}\ko"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}pl\*"; DestDir: "{app}\pl"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}pt-BR\*"; DestDir: "{app}\pt-BR"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}ru\*"; DestDir: "{app}\ru"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}tr\*"; DestDir: "{app}\tr"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}zh-Hans\*"; DestDir: "{app}\zh-Hans"; Flags: ignoreversion recursesubdirs
-Source: "{#SourcePath}zh-Hant\*"; DestDir: "{app}\zh-Hant"; Flags: ignoreversion recursesubdirs
+; Language packs (será agregados en futuras versiones)
+; Source: "{#SourcePath}cs\*"; DestDir: "{app}\cs"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}de\*"; DestDir: "{app}\de"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}es\*"; DestDir: "{app}\es"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}fr\*"; DestDir: "{app}\fr"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}it\*"; DestDir: "{app}\it"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}ja\*"; DestDir: "{app}\ja"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}ko\*"; DestDir: "{app}\ko"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}pl\*"; DestDir: "{app}\pl"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}pt-BR\*"; DestDir: "{app}\pt-BR"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}ru\*"; DestDir: "{app}\ru"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}tr\*"; DestDir: "{app}\tr"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}zh-Hans\*"; DestDir: "{app}\zh-Hans"; Flags: ignoreversion recursesubdirs
+; Source: "{#SourcePath}zh-Hant\*"; DestDir: "{app}\zh-Hant"; Flags: ignoreversion recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\Assets\AppIcon.ico"

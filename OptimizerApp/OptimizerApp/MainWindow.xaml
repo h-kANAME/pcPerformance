@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="PC Performance Optimizer - By KYZ" Height="700" Width="1100"
         Icon="Assets/AppIcon.png"
-        Style="{StaticResource RazerWindowStyle}">
-    <Grid>
-        <TabControl>
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource RazerBlackBrush}"
+        Foreground="{StaticResource RazerTextPrimaryBrush}">
+    <Grid Background="{StaticResource RazerBlackBrush}">
+        <TabControl Background="{StaticResource RazerBlackBrush}" Foreground="{StaticResource RazerTextPrimaryBrush}">
             <TabItem Header="Recursos">
                 <views:DiagnosticsView DataContext="{Binding Diagnostics}" />
             </TabItem>
@@ -18,6 +20,9 @@
             </TabItem>
             <TabItem Header="Memoria">
                 <views:MemoryCleanupView DataContext="{Binding MemoryCleanup}" />
+            </TabItem>
+            <TabItem Header="Disco">
+                <views:DiskOptimizationView DataContext="{Binding DiskOptimization}" />
             </TabItem>
         </TabControl>
     </Grid>

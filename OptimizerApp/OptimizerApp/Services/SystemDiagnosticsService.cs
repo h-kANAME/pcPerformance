@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using OptimizerApp.Models;
+using SystemDriveInfo = System.IO.DriveInfo;
 
 namespace OptimizerApp.Services;
 
@@ -254,7 +255,7 @@ public sealed class SystemDiagnosticsService : ISystemDiagnosticsService
     {
         try
         {
-            var systemDrive = DriveInfo.GetDrives()
+            var systemDrive = SystemDriveInfo.GetDrives()
                 .FirstOrDefault(d => d.IsReady && d.RootDirectory.FullName.Equals(Path.GetPathRoot(Environment.SystemDirectory), StringComparison.OrdinalIgnoreCase));
 
             if (systemDrive is null)
